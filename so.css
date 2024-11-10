@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f7c0c8; /* Màu nền cho trang */
+}
+
+.clock {
+    display: flex;
+    gap: 20px;
+}
+
+.digit {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(5, 40px);
+    gap: 5px;
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    background-color: #fffbfc;
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.pixel.on {
+    background-color: #ff1493;
+    box-shadow: 0 0 10px #ff1493;
+}
+
+.colon {
+    font-size: 120px;
+    color: #ff1493;
+    display: flex;
+    align-items: center;
+}
+
+.date {
+    font-size: 24px;
+    color: #ff1493;
+    margin-top: 20px;
+    text-align: center;
+}

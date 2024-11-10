@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YÊU BẠN MẬP</title>
+    <link rel="stylesheet" href="so.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="clock-section" class="section active">
+        <div class="clock">
+            <div class="digit" id="hour-tens"></div>
+            <div class="digit" id="hour-ones"></div>
+            <div class="colon" id="colon">:</div>
+            <div class="digit" id="minute-tens"></div>
+            <div class="digit" id="minute-ones"></div>
+        </div>
+    </div>
+
+    <div id="birthday-section" class="section">
+        <div class="boxheart">
+            <div class="heart"><h1>Bấm vô đi Mập</h1></div>
+            <div class="beat"></div>
+        </div>
+        <div class="boxchoose">
+            <h2>Sinh nhật vui vẻ nhá Mập iu ơi</h2>
+            <div class="listbutton">
+                <button id="no">Ờ</button>
+                <button id="yes">Cảm ơn Mầm nha</button>
+            </div>
+        </div>
+        <div class="popup">
+            <div class="inner">
+                <h3>Mập iu ơi</h3>
+                <img src="love.gif" alt="" />
+                <p>Chúc Mập luôn xinh đẹp, hạnh phúc, mạnh khỏe và đạt được tất cả những điều mà cậu mong ước. Tớ sẽ luôn ở bên cạnh cậu, yêu thương và chăm sóc cậu bằng những gì mình có.</p>
+                <h4>Happy birthday, Mập yêu!</h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="gioihan.js"></script>
+    <script>
+        let hasSwitched = false; 
+
+        function switchToBirthday() {
+            if (!hasSwitched) {
+                document.getElementById('clock-section').classList.remove('active');
+                document.getElementById('birthday-section').classList.add('active');
+                hasSwitched = true; 
+            }
+        }
+
+        // Chuyển đổi sau 7 giây
+        setTimeout(switchToBirthday, 7000);
+    </script>
+    <script>const noBtn = document.querySelector("#no");
+        const yesBtn = document.querySelector("#yes");
+        let boxheart = document.querySelector(".boxheart");
+        let boxchoose = document.querySelector(".boxchoose");
+        let popup = document.querySelector(".popup");
+        boxheart.addEventListener("click", function () {
+            boxheart.classList.add("active");
+            boxchoose.classList.add("active");
+        });
+        yesBtn.addEventListener("click", function () {
+            popup.classList.add("active");
+        });
+        noBtn.addEventListener("mouseenter", () => {
+            const top = Math.floor(Math.random() * window.innerHeight);
+            const left = Math.floor(Math.random() * window.innerWidth);
+
+            noBtn.style.top = `${top}px`;
+            noBtn.style.left = `${left}px`;
+        });</script>
+</body>
+</html>
